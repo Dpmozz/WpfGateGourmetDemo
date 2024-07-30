@@ -110,8 +110,11 @@ namespace WpfGourmetDemo
         private void OnFileDeleted(object source, FileSystemEventArgs e)
         {
             // Handle file deletions
-            Dispatcher.Invoke(() => imgControl.Source = null);
-            txbStatus.Text = "";
+            Dispatcher.Invoke(() =>
+            {
+                imgControl.Source = null;
+                txbStatus.Text = "";
+            });
         }
 
         private void OnFileRenamed(object source, RenamedEventArgs e)
