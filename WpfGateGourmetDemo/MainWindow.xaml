@@ -20,6 +20,6 @@
         </Viewbox>
 
         <!-- TextBox in the bottom row -->
-        <TextBox x:Name="txbStatus" Grid.Row="1" Margin="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="16" Background="Transparent" BorderBrush="{x:Null}"/>
+        <TextBox x:Name="txbStatus" Grid.Row="1" Margin="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="16" Background="Transparent" BorderBrush="{x:Null}" IsReadOnly="True" Focusable="False"/>
     </Grid>
 </Window>

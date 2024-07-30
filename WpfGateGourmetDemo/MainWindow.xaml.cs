@@ -37,7 +37,7 @@ namespace WpfGourmetDemo
         private void SetupFileSystemWatcher()
         {
             // Get the directory path from settings
-            string directoryPath = WpfGateGourmetDemo.Properties.Settings.Default.filePathCognex;
+            string directoryPath = filePathCognex;
 
             // Initialize the FileSystemWatcher
             fileSystemWatcher = new FileSystemWatcher
@@ -84,12 +84,14 @@ namespace WpfGourmetDemo
                     {
                         // Handle case where no matching image is found
                         imgControl.Source = null; // or set to a default image
+                        txbStatus.Text = "";
                     }
                 }
                 else
                 {
                     // Handle case where file name might be empty
                     imgControl.Source = null; // or set to a default image
+                    txbStatus.Text = "";
                 }
             });
         }
@@ -109,6 +111,7 @@ namespace WpfGourmetDemo
         {
             // Handle file deletions
             Dispatcher.Invoke(() => imgControl.Source = null);
+            txbStatus.Text = "";
         }
 
         private void OnFileRenamed(object source, RenamedEventArgs e)
