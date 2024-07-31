@@ -19,6 +19,6 @@
                 <Image x:Name="imgControl" Stretch="Uniform"/>
         </Viewbox>
         <!-- TextBox in the bottom row -->
-        <TextBox x:Name="txbStatus" Grid.Row="1" Margin="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="18" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" Focusable="False" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}"/>
+        <TextBlock x:Name="txbStatus" Grid.Row="1" Margin="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="18"/>
     </Grid>
 </Window>

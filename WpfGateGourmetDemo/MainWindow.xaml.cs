@@ -91,16 +91,13 @@ namespace WpfGourmetDemo
                 // Ensure the file name is not empty
                 if (!string.IsNullOrEmpty(fileName))
                 {
-                    // Get the first letter of the file name
-                    char firstLetter = fileName[0];
+                    // Create the full path to search for the image file
+                    string imagePath = System.IO.Path.Combine(filePathImages, fileName);
 
-                    // Find the first image file starting with the firstLetter
-                    string[] imageFiles = Directory.GetFiles(filePathImages, $"{firstLetter}*.jpg");
-
-                    // Display the first matching image file
-                    if (imageFiles.Length > 0)
+                    // Check if the file exists
+                    if (File.Exists(imagePath))
                     {
-                        string imagePath = imageFiles[0];
+                        // Display the image file
                         imgControl.Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
                     }
                     else
