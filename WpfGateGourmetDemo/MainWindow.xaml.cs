@@ -31,6 +31,21 @@ namespace WpfGourmetDemo
             InitializeComponent();
             filePathCognex = WpfGateGourmetDemo.Properties.Settings.Default.filePathCognex;
             filePathImages = WpfGateGourmetDemo.Properties.Settings.Default.filePathImages;
+
+            if (!Directory.Exists(filePathCognex))
+            {
+                // Log a message to txbstatus.txt
+                Dispatcher.Invoke(() => txbStatus.Text = $"filePathCognex does not exist: {filePathCognex}");
+                return;
+            }
+
+            if (!Directory.Exists(filePathImages))
+            {
+                // Log a message to txbstatus.txt
+                Dispatcher.Invoke(() => txbStatus.Text = $"filePathImages does not exist: {filePathImages}");
+                return;
+            }
+
             SetupFileSystemWatcher();
         }
 
