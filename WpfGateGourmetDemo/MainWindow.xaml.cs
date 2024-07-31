@@ -35,14 +35,22 @@ namespace WpfGourmetDemo
             if (!Directory.Exists(filePathCognex))
             {
                 // Log a message to txbstatus.txt
-                Dispatcher.Invoke(() => txbStatus.Text = $"filePathCognex does not exist: {filePathCognex}");
+                Dispatcher.Invoke(() =>
+                {
+                    txbStatus.Text = $"filePathCognex does not exist: {filePathCognex}";
+                    txbStatus.Background = Brushes.Pink; // Set the background color to red
+                });
                 return;
             }
 
             if (!Directory.Exists(filePathImages))
             {
-                // Log a message to txbstatus.txt
-                Dispatcher.Invoke(() => txbStatus.Text = $"filePathImages does not exist: {filePathImages}");
+                // Log a message to txbStatus
+                Dispatcher.Invoke(() =>
+                {
+                    txbStatus.Text = $"filePathImages does not exist: {filePathImages}";
+                    txbStatus.Background = Brushes.Pink; // Set the background color to red
+                });
                 return;
             }
 
